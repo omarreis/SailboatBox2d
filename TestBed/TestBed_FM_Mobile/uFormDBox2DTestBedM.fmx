@@ -1,0 +1,809 @@
+object FormDBox2DTestBedM: TFormDBox2DTestBedM
+  Left = 0
+  Top = 0
+  Caption = 'TestBed'
+  ClientHeight = 565
+  ClientWidth = 384
+  Quality = HighQuality
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnKeyDown = FormKeyDown
+  OnMouseWheel = FormMouseWheel
+  OnResize = FormResize
+  OnShow = FormShow
+  DesignerMasterStyle = 2
+  object ToolBar1: TToolBar
+    Size.Width = 384.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object BackBTN: TButton
+      Align = Left
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'priortoolbutton'
+      TabOrder = 0
+      Text = 'Back'
+      Visible = False
+      OnClick = BackBTNClick
+    end
+    object btnPause: TButton
+      Align = Right
+      Position.X = 296.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'stoptoolbutton'
+      TabOrder = 2
+      Text = 'Pause'
+      OnClick = btnPauseClick
+    end
+    object btnSingleStep: TButton
+      Align = Right
+      Position.X = 340.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'arrowrighttoolbutton'
+      TabOrder = 3
+      Text = 'Single Step'
+      OnClick = btnSingleStepClick
+    end
+    object btnDumpWorld: TButton
+      Align = Left
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'cameratoolbutton'
+      TabOrder = 4
+      Text = 'Dump World'
+      OnClick = btnDumpWorldClick
+    end
+    object btnLaunchBomb: TButton
+      Align = Right
+      Position.X = 252.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'bookmarkstoolbutton'
+      TabOrder = 5
+      Text = 'Pause'
+      OnClick = btnLaunchBombClick
+    end
+    object btnReset: TButton
+      Align = Left
+      Position.X = 44.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'refreshtoolbutton'
+      TabOrder = 6
+      Text = 'Reset'
+      OnClick = btnResetClick
+    end
+  end
+  object PanelClient: TPanel
+    Align = Client
+    Size.Width = 384.000000000000000000
+    Size.Height = 521.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 1
+    object pntbxDrawPanel: TPaintBox
+      Touch.GestureManager = GestureManager1
+      OnGesture = pntbxDrawPanelGesture
+      Align = Client
+      Size.Width = 384.000000000000000000
+      Size.Height = 408.000000000000000000
+      Size.PlatformDefault = False
+      OnMouseDown = pntbxDrawPanelMouseDown
+      OnMouseMove = pntbxDrawPanelMouseMove
+      OnMouseUp = pntbxDrawPanelMouseUp
+      OnPaint = pntbxDrawPanelPaint
+    end
+    object pnlTeclas: TPanel
+      Align = Bottom
+      Position.Y = 408.000000000000000000
+      Size.Width = 384.000000000000000000
+      Size.Height = 113.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object btnKeyA: TSpeedButton
+        Position.X = 11.000000000000000000
+        Position.Y = 42.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'A'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyD: TSpeedButton
+        Position.X = 104.000000000000000000
+        Position.Y = 42.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'D'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyW: TSpeedButton
+        Position.X = 57.000000000000000000
+        Position.Y = 6.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'W'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyS: TSpeedButton
+        Position.X = 57.000000000000000000
+        Position.Y = 42.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'S'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyJ: TSpeedButton
+        Position.X = 243.000000000000000000
+        Position.Y = 42.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'J'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyK: TSpeedButton
+        Position.X = 290.000000000000000000
+        Position.Y = 42.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'K'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyM: TSpeedButton
+        Position.X = 242.000000000000000000
+        Position.Y = 78.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'M'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyN: TSpeedButton
+        Position.X = 195.000000000000000000
+        Position.Y = 78.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'N'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyU: TSpeedButton
+        Position.X = 243.000000000000000000
+        Position.Y = 6.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'U'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyI: TSpeedButton
+        Position.X = 290.000000000000000000
+        Position.Y = 6.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'I'
+        OnClick = btnTeclaClick
+      end
+      object btnKeySpace: TSpeedButton
+        Position.X = 290.000000000000000000
+        Position.Y = 78.000000000000000000
+        Size.Width = 84.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = ' space'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyPlus: TSpeedButton
+        Position.X = 337.000000000000000000
+        Position.Y = 6.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = '+'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyMinus: TSpeedButton
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 337.000000000000000000
+        Position.Y = 42.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = '-'
+        TextSettings.Font.Size = 20.000000000000000000
+        OnClick = btnTeclaClick
+      end
+      object btnKeyZ: TSpeedButton
+        Position.X = 11.000000000000000000
+        Position.Y = 78.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'Z'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyX: TSpeedButton
+        Position.X = 57.000000000000000000
+        Position.Y = 78.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'X'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyC: TSpeedButton
+        Position.X = 103.000000000000000000
+        Position.Y = 78.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'C'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyV: TSpeedButton
+        Position.X = 149.000000000000000000
+        Position.Y = 78.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'V'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyQ: TSpeedButton
+        Position.X = 11.000000000000000000
+        Position.Y = 6.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'Q'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyF: TSpeedButton
+        Position.X = 150.000000000000000000
+        Position.Y = 42.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'F'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyG: TSpeedButton
+        Position.X = 197.000000000000000000
+        Position.Y = 42.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = 'G'
+        OnClick = btnTeclaClick
+      end
+      object btnKeyPt: TSpeedButton
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 150.000000000000000000
+        Position.Y = 6.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = '.'
+        TextSettings.Font.Size = 20.000000000000000000
+        OnClick = btnTeclaClick
+      end
+      object btnKeyComa: TSpeedButton
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 104.000000000000000000
+        Position.Y = 6.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = ','
+        TextSettings.Font.Size = 20.000000000000000000
+        OnClick = btnTeclaClick
+      end
+      object btnKeySlash: TSpeedButton
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 197.000000000000000000
+        Position.Y = 6.000000000000000000
+        Size.Width = 38.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'listitembutton'
+        Text = '/'
+        TextSettings.Font.Size = 20.000000000000000000
+        OnClick = btnTeclaClick
+      end
+    end
+  end
+  object TabControl: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 384.000000000000000000
+    Size.Height = 521.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 2
+    TabPosition = Bottom
+    Sizes = (
+      384s
+      472s
+      384s
+      472s
+      384s
+      472s
+      384s
+      472s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 96.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Tests'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object listTestEntries: TListBox
+        Touch.GestureManager = GestureManager1
+        Touch.InteractiveGestures = [Zoom]
+        Align = Client
+        Margins.Left = 2.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Size.Width = 382.000000000000000000
+        Size.Height = 452.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'transparentlistboxstyle'
+        TabOrder = 0
+        CanFocus = False
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        GroupingKind = Grouped
+        OnChange = listTestEntriesChange
+        Viewport.Width = 382.000000000000000000
+        Viewport.Height = 452.000000000000000000
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 96.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Visibility'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object LayoutVisibilityOptions: TLayout
+        Align = Client
+        Size.Width = 384.000000000000000000
+        Size.Height = 472.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object chkKeyInfo: TCheckBox
+          Align = Top
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 318.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Key Information'
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkStats: TCheckBox
+          Align = Top
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 286.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Statistics'
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkCOMs: TCheckBox
+          Align = Top
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 254.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Centre of Masses'
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkFrictionImpulse: TCheckBox
+          Align = Top
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 222.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          Text = 'Friction Impulse'
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkContactImpulse: TCheckBox
+          Align = Top
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 190.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          Text = 'Contact Impulse'
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkContactNormals: TCheckBox
+          Align = Top
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 158.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+          Text = 'Contact Normals'
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkContactPoints: TCheckBox
+          Align = Top
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 126.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 6
+          Text = 'Contact Points'
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkPairs: TCheckBox
+          Align = Top
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 94.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 7
+          Text = 'Pairs'
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkAABBs: TCheckBox
+          Align = Top
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 62.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 8
+          Text = 'AABBs'
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkShapes: TCheckBox
+          Align = Top
+          IsChecked = True
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 9
+          Text = 'Shapes'
+          OnChange = VisibilityOptionsChanged
+        end
+        object chkJoints: TCheckBox
+          Align = Top
+          IsChecked = True
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 10
+          Text = 'Joints'
+          OnChange = VisibilityOptionsChanged
+        end
+      end
+    end
+    object TabItem3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 96.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Options'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object LayoutSimulationOptions: TLayout
+        Align = Client
+        Size.Width = 384.000000000000000000
+        Size.Height = 472.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object chkEnableSleep: TCheckBox
+          Align = Top
+          IsChecked = True
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 30.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Enable Sleep'
+          OnChange = SimulationOptionsChanged
+        end
+        object chkSubStepping: TCheckBox
+          Align = Top
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 126.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Sub-Stepping'
+          OnChange = SimulationOptionsChanged
+        end
+        object chkWarmStarting: TCheckBox
+          Align = Top
+          IsChecked = True
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 62.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Warm Starting'
+          OnChange = SimulationOptionsChanged
+        end
+        object chkContinuousPhysics: TCheckBox
+          Align = Top
+          IsChecked = True
+          Margins.Left = 10.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 94.000000000000000000
+          Size.Width = 374.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          Text = 'Continuous Physics'
+          OnChange = SimulationOptionsChanged
+        end
+        object lblSimulationOptions: TLabel
+          Align = Top
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 4.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Position.X = 4.000000000000000000
+          Size.Width = 380.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Simulation Options'
+        end
+      end
+    end
+    object TabItem4: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 96.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Modes'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      object grpbxMode: TGroupBox
+        Align = Top
+        Margins.Left = 2.000000000000000000
+        Margins.Right = 2.000000000000000000
+        Position.X = 2.000000000000000000
+        Size.Width = 380.000000000000000000
+        Size.Height = 70.000000000000000000
+        Size.PlatformDefault = False
+        Text = ' Mode '
+        TabOrder = 0
+        object rdoRealTime: TRadioButton
+          Align = Top
+          GroupName = 'GroupMode'
+          IsChecked = True
+          Margins.Left = 8.000000000000000000
+          Margins.Top = 16.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Position.X = 8.000000000000000000
+          Position.Y = 16.000000000000000000
+          Size.Width = 370.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Real Time'
+          OnChange = ModeOptionsChanged
+        end
+        object rdoFixedStep: TRadioButton
+          Align = Top
+          GroupName = 'GroupMode'
+          Margins.Left = 8.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Position.X = 8.000000000000000000
+          Position.Y = 41.000000000000000000
+          Size.Width = 370.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Fixed Step (1/60s)'
+          OnChange = ModeOptionsChanged
+        end
+      end
+      object grpbxGravity: TGroupBox
+        Align = Top
+        Margins.Left = 2.000000000000000000
+        Margins.Right = 2.000000000000000000
+        Position.X = 2.000000000000000000
+        Position.Y = 70.000000000000000000
+        Size.Width = 380.000000000000000000
+        Size.Height = 70.000000000000000000
+        Size.PlatformDefault = False
+        Text = ' Gravity '
+        TabOrder = 1
+        object editGravityX: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          Position.X = 24.000000000000000000
+          Position.Y = 26.000000000000000000
+          Size.Width = 81.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          object lblGravityX: TLabel
+            Position.X = -24.000000000000000000
+            Position.Y = 3.000000000000000000
+            Size.Width = 21.000000000000000000
+            Size.Height = 17.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Trailing
+            Text = 'X'
+          end
+        end
+        object editGravityY: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          Position.X = 120.000000000000000000
+          Position.Y = 26.000000000000000000
+          Size.Width = 89.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          object lblGravityY: TLabel
+            Position.X = -24.000000000000000000
+            Position.Y = 3.000000000000000000
+            Size.Width = 21.000000000000000000
+            Size.Height = 17.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Trailing
+            Text = 'Y'
+          end
+        end
+        object btnConfirmGravity: TButton
+          Align = Right
+          Margins.Top = 15.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Position.X = 280.000000000000000000
+          Position.Y = 15.000000000000000000
+          Size.Width = 90.000000000000000000
+          Size.Height = 45.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Confirm'
+          OnClick = btnConfirmGravityClick
+        end
+      end
+      object chkAntialiasing: TCheckBox
+        Align = Top
+        IsChecked = True
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 2.000000000000000000
+        Margins.Bottom = 2.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 140.000000000000000000
+        Size.Width = 372.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Antialiasing'
+        OnClick = chkAntialiasingClick
+      end
+      object LayoutButtons: TLayout
+        Align = Top
+        Position.Y = 191.000000000000000000
+        Size.Width = 384.000000000000000000
+        Size.Height = 86.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+      end
+    end
+  end
+  object GestureManager1: TGestureManager
+    Sensitivity = 80.000000000000000000
+    Left = 194
+    Top = 352
+  end
+end

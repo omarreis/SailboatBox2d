@@ -1,0 +1,207 @@
+inherited FormDBox2DTestBedM_iPad: TFormDBox2DTestBedM_iPad
+  ClientHeight = 1004
+  ClientWidth = 768
+  DesignerMasterStyle = 2
+  inherited ToolBar1: TToolBar
+    Size.Width = 768.000000000000000000
+    inherited btnPause: TButton
+      Position.X = 680.000000000000000000
+    end
+    inherited btnSingleStep: TButton
+      Position.X = 724.000000000000000000
+    end
+    inherited btnLaunchBomb: TButton
+      Position.X = 636.000000000000000000
+    end
+  end
+  inherited PanelClient: TPanel
+    Size.Width = 768.000000000000000000
+    Size.Height = 960.000000000000000000
+    inherited pntbxDrawPanel: TPaintBox
+      Size.Width = 768.000000000000000000
+      Size.Height = 847.000000000000000000
+    end
+    inherited pnlTeclas: TPanel
+      Position.Y = 847.000000000000000000
+      Size.Width = 768.000000000000000000
+      inherited btnKeyJ: TSpeedButton
+        Position.X = 515.000000000000000000
+      end
+      inherited btnKeyK: TSpeedButton
+        Position.X = 562.000000000000000000
+      end
+      inherited btnKeyM: TSpeedButton
+        Position.X = 562.000000000000000000
+      end
+      inherited btnKeyN: TSpeedButton
+        Position.X = 515.000000000000000000
+      end
+      inherited btnKeyU: TSpeedButton
+        Position.X = 515.000000000000000000
+      end
+      inherited btnKeyI: TSpeedButton
+        Position.X = 562.000000000000000000
+      end
+      inherited btnKeySpace: TSpeedButton
+        Position.X = 650.000000000000000000
+      end
+      inherited btnKeyPlus: TSpeedButton
+        Position.X = 649.000000000000000000
+        Position.Y = 14.000000000000000000
+      end
+      inherited btnKeyMinus: TSpeedButton
+        Position.X = 697.000000000000000000
+        Position.Y = 13.000000000000000000
+      end
+      inherited btnKeyZ: TSpeedButton
+        Position.X = 180.000000000000000000
+        Position.Y = 79.000000000000000000
+      end
+      inherited btnKeyC: TSpeedButton
+        Position.X = 157.000000000000000000
+        Position.Y = 41.000000000000000000
+      end
+      inherited btnKeyV: TSpeedButton
+        Position.X = 205.000000000000000000
+        Position.Y = 41.000000000000000000
+      end
+      inherited btnKeyQ: TSpeedButton
+        Position.X = 428.000000000000000000
+      end
+      inherited btnKeyF: TSpeedButton
+        Position.X = 309.000000000000000000
+      end
+      inherited btnKeyG: TSpeedButton
+        Position.X = 356.000000000000000000
+      end
+      inherited btnKeyPt: TSpeedButton
+        Position.X = 429.000000000000000000
+        Position.Y = 42.000000000000000000
+      end
+      inherited btnKeyComa: TSpeedButton
+        Position.X = 263.000000000000000000
+        Position.Y = 42.000000000000000000
+      end
+      inherited btnKeySlash: TSpeedButton
+        Position.X = 181.000000000000000000
+      end
+    end
+  end
+  inherited TabControl: TTabControl
+    Size.Width = 768.000000000000000000
+    Size.Height = 960.000000000000000000
+    Sizes = (
+      768s
+      911s
+      768s
+      911s
+      768s
+      911s
+      768s
+      911s)
+    inherited TabItem1: TTabItem
+      Size.Width = 192.000000000000000000
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited listTestEntries: TListBox
+        Size.Width = 766.000000000000000000
+        Size.Height = 891.000000000000000000
+        Viewport.Width = 766.000000000000000000
+        Viewport.Height = 891.000000000000000000
+      end
+    end
+    inherited TabItem2: TTabItem
+      Size.Width = 192.000000000000000000
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited LayoutVisibilityOptions: TLayout
+        Size.Width = 768.000000000000000000
+        Size.Height = 911.000000000000000000
+        inherited chkKeyInfo: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited chkStats: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited chkCOMs: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited chkFrictionImpulse: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited chkContactImpulse: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited chkContactNormals: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited chkContactPoints: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited chkPairs: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited chkAABBs: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited chkShapes: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited chkJoints: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+      end
+    end
+    inherited TabItem3: TTabItem
+      Size.Width = 192.000000000000000000
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited LayoutSimulationOptions: TLayout
+        Size.Width = 768.000000000000000000
+        Size.Height = 911.000000000000000000
+        inherited chkEnableSleep: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited chkSubStepping: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited chkWarmStarting: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited chkContinuousPhysics: TCheckBox
+          Size.Width = 758.000000000000000000
+        end
+        inherited lblSimulationOptions: TLabel
+          Size.Width = 764.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+    end
+    inherited TabItem4: TTabItem
+      Size.Width = 192.000000000000000000
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 49.000000000000000000
+      inherited grpbxMode: TGroupBox
+        Size.Width = 764.000000000000000000
+        inherited rdoRealTime: TRadioButton
+          Size.Width = 754.000000000000000000
+        end
+        inherited rdoFixedStep: TRadioButton
+          Size.Width = 754.000000000000000000
+        end
+      end
+      inherited grpbxGravity: TGroupBox
+        Size.Width = 764.000000000000000000
+        inherited btnConfirmGravity: TButton
+          Position.X = 664.000000000000000000
+        end
+      end
+      inherited chkAntialiasing: TCheckBox
+        Size.Width = 756.000000000000000000
+      end
+      inherited LayoutButtons: TLayout
+        Size.Width = 768.000000000000000000
+      end
+    end
+  end
+end
