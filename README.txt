@@ -1,4 +1,4 @@
-box2d-firemonkey
+Sailboat-box2d-firemonkey
 ================
 
 This branch implements a 2d sailboat model
