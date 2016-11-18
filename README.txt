@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-Sailboat-Box2d
-=======
 Sailboat-box2d-firemonkey
->>>>>>> origin/master
-================
 
-<<<<<<< HEAD
 This branch of box2d-Firemonkey implements a sailboat simulation
 for Win32, Win64 and iOS 
 
@@ -15,8 +9,3 @@ so I made a new master
 
 Check the project Wiki for more details.
 
-=======
-This branch implements a 2d sailboat model
-
-Check the Wiki for more information
->>>>>>> origin/master
