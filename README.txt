@@ -1,18 +1,12 @@
-box2d-firemonkey
+Sailboat-Box2d
 ================
 
-Firemonkey translation of open source 2D physics engine Box2D.
-
-This branch implements a sailboat simulation using box2d-firemonkey.
+This branch of box2d-Firemonkey implements a sailboat simulation
 for Win32, Win64 and iOS 
 
-this is supposed to be a branch of firemonkey_box2d
+This is supposed to be a branch of box2d-Firemonkey
 however I had problems working on the branch,
 so I made a new master
 
-Compile TestBed_FM_Mobile.dproj
-The sailboat is the 1st test.
-
-I used Delphi 10.1 Berlin 
-
+Check the project Wiki for more details.
 
