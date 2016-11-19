@@ -1,11 +1,9 @@
-Sailboat-box2d-firemonkey
+Sailboat with box2d-firemonkey  
 
-This branch of box2d-Firemonkey implements a sailboat simulation
-for Win32, Win64 and iOS 
-
-This is supposed to be a branch of box2d-Firemonkey
-however I had problems working on the branch,
-so I made a new master
+nov16 - This fork of box2d-Firemonkey implements a 
+top-down 2D sailboat simulation, using physics of box2D.
+Tested for Win32, Win64 and iOS.
+Runs in box2D VCL testBed with minimal change. 
 
 Check the project Wiki for more details.
 
